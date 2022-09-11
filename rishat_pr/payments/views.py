@@ -39,7 +39,7 @@ def buy_item(request, pk):
                 'quantity': 1,
             }],
             mode='payment',
-            success_url='https://example.com/success',
-            cancel_url='https://example.com/cancel',
+            success_url=HttpResponse("Покупка удалась"),
+            cancel_url=HttpResponse("Покупка не удалась"),
         )
         return redirect(session.url, code=303)
