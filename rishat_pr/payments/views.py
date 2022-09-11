@@ -45,7 +45,7 @@ def get_item(request, pk):
         }
         return render(request, template_name='item_detail.html', context=context)
     else:
-        return HttpResponse('item.name')
+        return HttpResponse('Not Found')
 
 
 with open('key.txt', 'r') as f:
