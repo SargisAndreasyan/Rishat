@@ -36,10 +36,11 @@ def buy(name, price):
 @api_view(('GET',))
 def get_item(request, pk):
     item = Item.objects.filter(id=pk).first()
+    price = str(item.price)[:-2] + ',' +  str(item.price)[-2:]
     if item is not None:
         context = {
             'name': item.name,
-            'price': item.price,
+            'price': price,
             'description': item.description,
             'id': pk
         }
